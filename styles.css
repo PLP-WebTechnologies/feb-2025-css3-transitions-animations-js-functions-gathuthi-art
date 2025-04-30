@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    color: #333;
+    padding: 40px;
+    margin: 0;
+  }
+  
+  #main-heading {
+    color: #2c3e50;
+    border-bottom: 3px solid #8e44ad;
+    padding-bottom: 10px;
+  }
+  
+  .intro {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .styled-image {
+    width: 300px;
+    border: 4px solid #888;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    color: #d35400;
+    font-weight: bold;
+  }
+  
