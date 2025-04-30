@@ -1,33 +1,52 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript & DOM</title>
-  <link rel="stylesheet" href="style.css">
+  <title>JS Event Playground</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 id="main-heading">Welcome to My Page</h1>
-  </header>
 
-  <section>
-    <p id="intro">Click the button to change this text and style!</p>
-    <button onclick="changeContent()">Change Text & Style</button>
-  </section>
+  <h1>🎮 JS Interaction Playground</h1>
 
-  <section>
-    <button onclick="addElement()">Add New Element</button>
-    <button onclick="removeElement()">Remove Last Element</button>
-    <ul id="item-list">
-      <li>Item 1</li>
-    </ul>
-  </section>
+  <!-- Button & Events -->
+  <button id="changeBtn">Click Me!</button>
+  <p id="buttonText">This text will change.</p>
 
-  <footer>
-    <p>Made with ❤️ by Me</p>
-  </footer>
+  <!-- Hover Area -->
+  <div id="hoverBox">Hover over me</div>
+
+  <!-- Keypress -->
+  <input type="text" id="keyInput" placeholder="Type something..." />
+
+  <!-- Secret double click -->
+  <button id="secretBtn">Double-click me 🤫</button>
+  <p id="secretMessage"></p>
+
+  <!-- Image Gallery -->
+  <div id="gallery">
+    <img src="https://placekitten.com/200/200" id="galleryImage" alt="Kitten" />
+    <button onclick="changeImage()">Next Image</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button onclick="showTab('tab1')">Tab 1</button>
+    <button onclick="showTab('tab2')">Tab 2</button>
+    <div id="tab1" class="tab-content">This is Tab 1 content.</div>
+    <div id="tab2" class="tab-content" style="display:none;">This is Tab 2 content.</div>
+  </div>
+
+  <!-- Form -->
+  <form id="myForm" onsubmit="return validateForm(event)">
+    <h3>Sign Up</h3>
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <p id="feedback"></p>
+    <button type="submit">Submit</button>
+  </form>
 
   <script src="script.js"></script>
 </body>

@@ -1,24 +1,70 @@
-// script.js
-
-function changeContent() {
-    const intro = document.getElementById("intro");
-    intro.textContent = "You just changed this text using JavaScript!";
-    intro.style.color = "red";
-    intro.style.fontWeight = "bold";
-    intro.style.backgroundColor = "#f0f0f0";
+// Change button text and color
+document.getElementById("changeBtn").addEventListener("click", function () {
+    const text = document.getElementById("buttonText");
+    text.textContent = "Button clicked! 🎉";
+    this.style.backgroundColor = "green";
+  });
+  
+  // Hover effect
+  document.getElementById("hoverBox").addEventListener("mouseover", () => {
+    document.getElementById("hoverBox").style.backgroundColor = "orange";
+  });
+  document.getElementById("hoverBox").addEventListener("mouseout", () => {
+    document.getElementById("hoverBox").style.backgroundColor = "lightblue";
+  });
+  
+  // Keypress detection
+  document.getElementById("keyInput").addEventListener("keyup", function (e) {
+    console.log("Key pressed: ", e.key);
+  });
+  
+  // Double click secret
+  document.getElementById("secretBtn").addEventListener("dblclick", () => {
+    document.getElementById("secretMessage").textContent = "You discovered the secret! 🎉";
+  });
+  
+  // Image gallery
+  let imgIndex = 0;
+  const images = [
+    "https://placekitten.com/200/200",
+    "https://placebear.com/200/200",
+    "https://place-puppy.com/200x200"
+  ];
+  
+  function changeImage() {
+    imgIndex = (imgIndex + 1) % images.length;
+    document.getElementById("galleryImage").src = images[imgIndex];
   }
   
-  function addElement() {
-    const list = document.getElementById("item-list");
-    const newItem = document.createElement("li");
-    newItem.textContent = "New Item " + (list.children.length + 1);
-    list.appendChild(newItem);
+  // Tabs
+  function showTab(tabId) {
+    document.getElementById("tab1").style.display = "none";
+    document.getElementById("tab2").style.display = "none";
+    document.getElementById(tabId).style.display = "block";
   }
   
-  function removeElement() {
-    const list = document.getElementById("item-list");
-    if (list.lastChild) {
-      list.removeChild(list.lastChild);
+  // Form validation
+  function validateForm(event) {
+    event.preventDefault(); // Prevent form from submitting
+  
+    const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value;
+    const feedback = document.getElementById("feedback");
+  
+    if (!email.includes("@")) {
+      feedback.textContent = "Invalid email format.";
+      feedback.style.color = "red";
+      return false;
     }
+  
+    if (password.length < 8) {
+      feedback.textContent = "Password must be at least 8 characters.";
+      feedback.style.color = "red";
+      return false;
+    }
+  
+    feedback.textContent = "Form submitted successfully!";
+    feedback.style.color = "green";
+    return true;
   }
   

@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f4f4;
+  }
+  
+  #hoverBox {
+    width: 200px;
+    height: 100px;
+    background: lightblue;
+    margin: 10px 0;
+    line-height: 100px;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+  
+  .tab-content {
+    margin-top: 10px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #gallery img {
+    max-width: 100%;
+  }
+  
